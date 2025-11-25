@@ -4,7 +4,6 @@ import {
   Home,
   User,
   Mail,
-  FolderOpen,
   Download,
   Github,
   Linkedin,
@@ -66,7 +65,6 @@ const mixpanel = {
 
 const Portfolio = () => {
   const [currentSection, setCurrentSection] = useState("home");
-  const [scrollY, setScrollY] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
   const [isHoveringInput, setIsHoveringInput] = useState(false);
@@ -78,9 +76,6 @@ const Portfolio = () => {
   const [notificationType, setNotificationType] = useState("success");
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -111,7 +106,6 @@ const Portfolio = () => {
     setTimeout(initMixpanel, 1000);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
       clearTimeout(timer);
     };
