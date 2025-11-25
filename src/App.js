@@ -74,6 +74,7 @@ const Portfolio = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
   const [notificationType, setNotificationType] = useState("success");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -406,24 +407,24 @@ const Portfolio = () => {
           </div>
 
           <div className="space-y-6">
-            <h1 className="text-6xl font-light text-gray-800 mb-4 tracking-wide">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-gray-800 mb-4 tracking-wide">
               Michelle Medina
             </h1>
 
             <div className="flex items-center justify-center mb-8">
-              <div className="h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent w-24"></div>
-              <div className="mx-6 w-2 h-2 bg-rose-300 rounded-full"></div>
-              <div className="h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent w-24"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent w-16 sm:w-24"></div>
+              <div className="mx-4 sm:mx-6 w-2 h-2 bg-rose-300 rounded-full"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent w-16 sm:w-24"></div>
             </div>
 
-            <p className="text-xl text-gray-600 font-light tracking-wide mb-8">
+            <p className="text-lg sm:text-xl text-gray-600 font-light tracking-wide mb-8">
               {t(
                 "Support Engineer & Web Developer",
                 "Ingeniera de Soporte y Desarrolladora Web"
               )}
             </p>
 
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed font-light px-4">
               {t(
                 "Passionate about creating seamless user experiences through thoughtful problem-solving and elegant web solutions. Bridging the gap between technical support and modern development.",
                 "Apasionada por crear experiencias de usuario fluidas a través de la resolución reflexiva de problemas y soluciones web elegantes. Conectando el soporte técnico con el desarrollo moderno."
@@ -432,7 +433,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="flex justify-center space-x-8 mb-20">
+        <div className="flex justify-center space-x-4 sm:space-x-8 mb-12 sm:mb-20">
           {[
             {
               icon: Github,
@@ -478,7 +479,7 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto px-4">
           {[
             {
               title: t("Technical Support", "Soporte Técnico"),
@@ -525,11 +526,11 @@ const Portfolio = () => {
   );
 
   const renderResume = () => (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex justify-between items-center mb-16">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12 sm:py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 sm:mb-16 gap-4">
           <div>
-            <h2 className="text-4xl font-light text-gray-800 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-light text-gray-800 mb-4">
               {t("Professional Journey", "Trayectoria Profesional")}
             </h2>
             <div className="h-1 w-20 bg-gradient-to-r from-rose-400 to-purple-400 rounded-full"></div>
@@ -538,11 +539,11 @@ const Portfolio = () => {
             onClick={handleDownloadResume}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
-            className="group relative px-8 py-3 bg-white/60 backdrop-blur-sm border border-white/50 rounded-full hover:bg-white/80 hover:shadow-lg hover:shadow-rose-200/50 transition-all duration-300 hover:-translate-y-1"
+            className="group relative px-6 sm:px-8 py-3 bg-white/60 backdrop-blur-sm border border-white/50 rounded-full hover:bg-white/80 hover:shadow-lg hover:shadow-rose-200/50 transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="flex items-center space-x-3 text-gray-700 group-hover:text-rose-600">
-              <Download size={20} />
-              <span className="font-medium">
+            <div className="flex items-center space-x-2 sm:space-x-3 text-gray-700 group-hover:text-rose-600">
+              <Download size={18} />
+              <span className="font-medium text-sm sm:text-base">
                 {t("Download Resume", "Descargar CV")}
               </span>
             </div>
@@ -627,10 +628,10 @@ const Portfolio = () => {
             </div>
           </section>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <section className="bg-white/40 backdrop-blur-sm border border-white/50 rounded-3xl p-8 hover:bg-white/60 transition-all duration-500">
-              <h3 className="text-2xl font-medium text-gray-800 mb-8 flex items-center">
-                <div className="w-3 h-8 bg-gradient-to-b from-purple-400 to-rose-400 rounded-full mr-4"></div>
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <section className="bg-white/40 backdrop-blur-sm border border-white/50 rounded-3xl p-6 sm:p-8 hover:bg-white/60 transition-all duration-500">
+              <h3 className="text-xl sm:text-2xl font-medium text-gray-800 mb-6 sm:mb-8 flex items-center">
+                <div className="w-3 h-6 sm:h-8 bg-gradient-to-b from-purple-400 to-rose-400 rounded-full mr-3 sm:mr-4"></div>
                 {t("Education", "Educación")}
               </h3>
               <div className="space-y-4">
@@ -649,12 +650,12 @@ const Portfolio = () => {
               </div>
             </section>
 
-            <section className="bg-white/40 backdrop-blur-sm border border-white/50 rounded-3xl p-8 hover:bg-white/60 transition-all duration-500">
-              <h3 className="text-2xl font-medium text-gray-800 mb-8 flex items-center">
-                <div className="w-3 h-8 bg-gradient-to-b from-rose-400 to-purple-400 rounded-full mr-4"></div>
+            <section className="bg-white/40 backdrop-blur-sm border border-white/50 rounded-3xl p-6 sm:p-8 hover:bg-white/60 transition-all duration-500">
+              <h3 className="text-xl sm:text-2xl font-medium text-gray-800 mb-6 sm:mb-8 flex items-center">
+                <div className="w-3 h-6 sm:h-8 bg-gradient-to-b from-rose-400 to-purple-400 rounded-full mr-3 sm:mr-4"></div>
                 {t("Core Skills", "Habilidades Principales")}
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   t("Customer Success", "Éxito del Cliente"),
                   t("Quality Assurance", "Control de Calidad"),
@@ -758,10 +759,10 @@ const Portfolio = () => {
   );
 
   const renderContact = () => (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-gray-800 mb-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12 sm:py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-light text-gray-800 mb-4">
             {t("Let's Connect", "Conectemos")}
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-rose-400 to-purple-400 rounded-full mx-auto mb-6"></div>
@@ -899,11 +900,11 @@ const Portfolio = () => {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
-      style={{ cursor: "none" }}
+      style={{ cursor: window.innerWidth >= 768 ? "none" : "auto" }}
     >
-      {/* Enhanced Custom Cursor */}
+      {/* Enhanced Custom Cursor - Hidden on mobile */}
       <div
-        className="fixed pointer-events-none z-50"
+        className="hidden md:block fixed pointer-events-none z-50"
         style={{
           left: mousePosition.x - 8,
           top: mousePosition.y - 8,
@@ -923,7 +924,7 @@ const Portfolio = () => {
       />
 
       <div
-        className="fixed pointer-events-none z-50 border-2 rounded-full"
+        className="hidden md:block fixed pointer-events-none z-50 border-2 rounded-full"
         style={{
           left: mousePosition.x - (isHoveringInput ? 15 : isHovering ? 30 : 20),
           top: mousePosition.y - (isHoveringInput ? 15 : isHovering ? 30 : 20),
@@ -979,20 +980,33 @@ const Portfolio = () => {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3 group">
+            <div className="flex items-center space-x-2 sm:space-x-3 group">
               <div className="relative">
-                <div className="text-2xl font-light text-gray-800 tracking-[0.2em]">
+                <div className="text-xl sm:text-2xl font-light text-gray-800 tracking-[0.2em]">
                   MM
                 </div>
                 <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-rose-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               </div>
-              <div className="h-8 w-px bg-gradient-to-b from-rose-300 to-purple-300"></div>
-              <span className="text-lg font-light text-gray-700 tracking-wide">
+              <div className="h-6 sm:h-8 w-px bg-gradient-to-b from-rose-300 to-purple-300"></div>
+              <span className="text-base sm:text-lg font-light text-gray-700 tracking-wide">
                 Portfolio
               </span>
             </div>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-white/50 transition-colors"
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`w-full h-0.5 bg-gray-700 transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`w-full h-0.5 bg-gray-700 transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`w-full h-0.5 bg-gray-700 transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              </div>
+            </button>
 
             <div className="hidden md:flex space-x-1 items-center">
               {navItems.map((item) => {
@@ -1033,6 +1047,44 @@ const Portfolio = () => {
               </button>
             </div>
           </div>
+
+          {/* Mobile menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 border-t border-white/20">
+              <div className="flex flex-col space-y-2">
+                {navItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        handleNavClick(item.id);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                        currentSection === item.id
+                          ? "bg-white/60 text-rose-600"
+                          : "text-gray-600 hover:bg-white/30"
+                      }`}
+                    >
+                      <Icon size={18} />
+                      <span>{item.label}</span>
+                    </button>
+                  );
+                })}
+                <button
+                  onClick={() => {
+                    handleLanguageToggle();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-white/30 transition-all"
+                >
+                  <Globe size={18} />
+                  <span>{language === "en" ? "Español" : "English"}</span>
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
